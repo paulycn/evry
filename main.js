@@ -11,26 +11,32 @@ const app = Vue.createApp({
             step: 1,
             premise: "",
             area: [],
+            service:[],
 
             areaOptions:[
-                {label: "1 Room", img: "/img/one_room.svg"},
-                {label: "2 Rooms", img: "/img/two_room.svg"},
-                {label: "3+ Rooms", img: "/img/three_room.svg"},
-                {label: "Hallway", img: "/img/hallway.svg"},
-                {label: "Bathroom", img: "/img/bathroom.svg"}
+                {label: "1 Room", img: "img/one_room.svg"},
+                {label: "2 Rooms", img: "img/two_room.svg"},
+                {label: "3+ Rooms", img: "img/three_room.svg"},
+                {label: "Hallway", img: "img/hallway.svg"},
+                {label: "Bathroom", img: "img/bathroom.svg"}
             ],
 
             serviceOptions:[
-                
-            ]
+                {label: "Tiling", img:"img/tiling.svg"},
+                {label: "Flooring", img:"img/flooring.svg"},
+                {label: "Insulation", img:"img/insulation.svg"},
+                {label: "Painting and Decoration", img:"img/painting.svg"},
+                {label: "End of tenancy refurbishment", img:"img/house.svg"}
+            ],
         }
     },
     computed: {
         attributes () {
             return {
-                LASTNAME: this.lastName, 
-                FIRSTNAME: this.firstName, 
-                SMS: this.phoneNumber
+                Name: this.lastName, 
+                SMS: this.phoneNumber,
+                Adress: this.adress
+                
             }
         }
     },
@@ -85,6 +91,14 @@ const app = Vue.createApp({
             }
             console.log(this.area)
         },
+        setService(data){
+            if(this.service.includes(data)){
+                this.service.splice(this.service.indexOf(data),1)
+            } else {
+                this.service.push(data)
+            }
+            console.log(this.service)
+        }
     }
 })
 

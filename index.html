@@ -46,13 +46,13 @@
                         <div class="form_info no_back">
                             <h2>PREMISE</h2>
                             <button id="close" @click="closeForm">
-                                <img src="/img/x.svg" alt="">           
+                                <img src="img/x.svg" alt="">           
                             </button>
                         </div>
                         <div class="options">
-                            <button type="button" @click="setPremise('flat')"><img src="/img/flat.svg" alt="">Flat</button>
-                            <button type="button" @click="setPremise('house')"><img src="/img/house.svg" alt="">House</button>
-                            <button type="button" @click="setPremise('commercial')"><img src="/img/commercial.svg" alt="">Commercial</button>
+                            <button type="button" @click="setPremise('flat')"><img src="img/flat.svg" alt="">Flat</button>
+                            <button type="button" @click="setPremise('house')"><img src="img/house.svg" alt="">House</button>
+                            <button type="button" @click="setPremise('commercial')"><img src="img/commercial.svg" alt="">Commercial</button>
                         </div>
                         <div class="form_button">
                             <button @click="next">Next</button>
@@ -64,11 +64,11 @@
                     <form class="form_options" id="form">
                         <div class="form_info">
                             <button id="back" @click="back">
-                                <img src="/img/back.svg" alt="">
+                                <img src="img/back.svg" alt="">
                             </button>
                             <h2>AREA</h2>
                             <button id="close" @click="closeForm">
-                                <img src="/img/x.svg" alt="">           
+                                <img src="img/x.svg" alt="">           
                             </button>
                         </div>
                         <div class="options">
@@ -89,22 +89,23 @@
                     <form class="form_options" id="form">
                         <div class="form_info">
                             <button id="back" @click="back">
-                                <img src="/img/back.svg" alt="">
+                                <img src="img/back.svg" alt="">
                             </button>
                             <h2>SERVICE</h2>
                             <button id="close" @click="closeForm">
-                                <img src="/img/x.svg" alt="">           
+                                <img src="img/x.svg" alt="">           
                             </button>
                         </div>
                         <div class="options">
-                            <button type="button"><img src="/img/tiling.svg" alt="">Tiling</button>
-                            <button type="button"><img src="/img/flooring.svg" alt="">Flooring</button>
-                            <button type="button"><img src="/img/insulation.svg" alt="">Insulation</button>
-                            <button type="button"><img src="/img/painting.svg" alt="">Painting and Decoration</button>
-                            <button type="button"><img src="/img/house.svg" alt="">End of tenancy refurbishment</button>
+                            <button v-for="option in serviceOptions" type="button"
+                                :class="{active:service.includes(option.label)}"
+                                @click="setService(option.label)">
+                                <img :src="option.img" alt="">
+                                {{option.label}}
+                            </button>
                         </div>
                         <div class="form_button">
-                            <button @click="next" id="open">Next</button>
+                            <button @click="next">Next</button>
                         </div>       
                     </form>
                 </div> 
@@ -113,11 +114,11 @@
                     <form  @submit.prevent="send()" class="form" id="form">
                         <div class="form_info">
                             <button id="back" @click="back">
-                                <img src="/img/back.svg" alt="">
+                                <img src="img/back.svg" alt="">
                             </button>
                             <h2>CONTACT</h2>
                             <button id="close" @click="closeForm">
-                                <img src="/img/x.svg" alt="">           
+                                <img src="img/x.svg" alt="">           
                             </button>
                         </div>
                         <input v-model="firstName" required type="text" name="firstName" placeholder="Name" >
@@ -135,11 +136,11 @@
                         <div class="form_info no_back">
                             <h2>THANK YOU</h2>
                             <button id="close" @click="closeForm">
-                                <img src="/img/x.svg" alt="">           
+                                <img src="img/x.svg" alt="">           
                             </button>
                         </div>
                         <div class="options">
-                            <span><img src="/img/finish.svg" alt="">We will be right back.</span>
+                            <span><img src="img/finish.svg" alt="">We will be right back.</span>
                         </div>
                         <div class="form_button">
                             <button id="open">Finish</button>
