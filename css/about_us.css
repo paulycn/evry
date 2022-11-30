@@ -1,0 +1,152 @@
+.about_us {
+    width: 100%;
+    position: relative;
+    background-color: #eaebe5;
+    z-index: -1;
+}
+
+.about_us::after {
+    content: '';
+    position: absolute;
+    width: 40%;
+    height: 100%;
+    top: 0;
+    right: 0;
+    background: #f3d548;
+    z-index: -1;
+    border-bottom-right-radius: 20%;
+    border-bottom-left-radius: 40%
+}
+
+.about_us .wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 1000px;
+    min-height: calc(100vh - 80px);
+    margin: 0 auto;
+    background-image:url(/img/patterns.svg), url(/img/splash.svg);
+    background-position:right -10px bottom 0px, right 0px top -43px;
+    background-size: 35% ,60%;
+    background-repeat: no-repeat;
+}
+
+.about_us_section h2 {
+    font-size: 30px;
+    font-weight: 500;
+    text-align: center;
+    padding-top: 10px;
+    margin-left: 50px;
+}
+
+.about_us_image {
+    z-index: 1;
+}
+
+.about_us_image img {
+    max-width: 100%;
+}
+
+.about_us_image h2 {
+    font-size: 60px;
+    margin: 15px 0 -100px 0;
+    letter-spacing: 4px;
+    font-weight: 500;
+}
+
+.about_us_text {
+    padding: 50px 0 50px;
+    margin-right: -80px;
+}
+
+.about_us_text p {
+    font-weight: 100;
+    margin-left: 20px;
+    max-width: 600px;
+    font-size: 19px;
+    text-align: right;
+    line-height: 40px;
+}
+
+.about_us_text span {
+    font-weight: 500;
+}
+
+.about_us_text h2 {
+    text-align: center;
+    margin: 0 0 30px;
+    font-size: 30px;
+    font-weight: 500;
+    position: relative;
+    left: -50px;
+}
+
+.title_mobile {
+    display: none;
+}
+
+@media (max-width:414px) {
+    .menu_mobile {
+        display: flex;
+        margin-top: 50px;
+        font-size: 35px;
+    }
+
+    .navigation_bar {
+        position: fixed;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        justify-content: space-between;
+    }
+
+    .about_us::after {
+        display: none;
+    }
+
+    .about_us .wrapper {
+        display: flex;
+        flex-direction: column-reverse;
+        background-image: none;
+        width:fit-content;
+        margin-left: 52px;
+    }
+
+    .about_us_image h2 {
+        display: none;
+    }
+
+    .about_us_text h2 {
+        text-align: center;
+        margin: 10px ;
+        font-size: 20px;
+        font-weight: 400;
+        position: relative;
+        left: 0px;
+    }
+
+    .about_us_text h2.title_media {
+        font-size: 30px;
+        font-weight: 500;
+        justify-content: center;
+        display: flex;
+        padding: 20px 0 20px;
+    }
+
+    .about_us_text p {
+        font-weight: 100;
+        margin-left: 0px;
+        max-width: 350px;
+        font-size: 19px;
+        text-align: center;
+        line-height: 36px;
+    }
+
+    .about_us_image img {
+        transform: rotateY(180deg)
+    }
+
+    .about_us_text {
+        padding: 0;
+        margin-right: 0;
+    }
+}

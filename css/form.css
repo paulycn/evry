@@ -1,0 +1,133 @@
+.form,
+.form_options {
+    position: absolute;
+    top: 40%;
+    right: 38%;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-direction: column;
+    align-items: center;
+    width: 600px;
+    background:#f3d548;
+    padding: 20px 40px;
+    border: 1px solid rgba(0, 0, 0, 0.49);
+    backdrop-filter: blur(2px);
+    border-radius: 50px;
+}
+
+.form input {
+    height: 50px;
+    width: 300px;
+    font-size: 14px;
+    color: rgba(88, 86, 86, 0.81);
+    font-family: 'Inter';
+    font-weight: 500;
+    background: rgba(255, 255, 255, 0.95);
+    border: 1px solid rgba(0, 0, 0, 0.48);
+    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 40px;
+    padding-left: 37px;
+    background-image: url(/img/name.svg);
+    background-repeat:no-repeat;
+    background-size: 7%;
+    background-position: left 9px top 12px;;
+}
+
+.form input:nth-child(3) {
+    background-image: url(/img/phone.svg);
+}
+
+.form input:nth-child(4) {
+    background-image: url(/img/email.svg);
+}
+
+.form input:nth-child(5) {
+    background-image: url(/img/address.svg);
+}
+
+.form_info {
+    display: flex;
+    justify-content: space-between;
+    gap: 130px;
+}
+
+.form_info.no_back {
+    gap: 100px;
+    padding-left: 130px;
+}
+
+.form_info h2 {
+    text-align: center;
+    font-family: 'Inter';
+    font-weight: 800;
+    letter-spacing: 0.01em;
+    font-size: 35px;
+    color: #BAA338;
+}
+
+.form_info button img {
+    width: 15px;
+}
+
+.options img {
+    width: 25px;
+}
+
+.form_info button {
+    display: flex;
+    background:#f3d548;
+    border:0;
+    justify-content: space-between;
+}
+
+.form_info button:hover {
+    box-shadow: none;
+}
+
+.form textarea {
+    padding: 15px;
+    height: 150px;
+}
+
+.form button {
+    text-align: center;
+}
+
+.form_button button {
+    text-align: center;
+    font-family: 'Inter';
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    color: rgba(88, 86, 86, 0.81);
+    background:#f3d548;
+    border: 0;
+    font-size: 25px;
+}
+
+.options span,
+.options button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    background: rgba(255, 255, 255, 0.95);
+    border: 1px solid rgba(0, 0, 0, 0.48);
+    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 40px;
+    height: 50px;
+    width: 300px;
+    font-size: 16px;
+    color: rgba(88, 86, 86, 0.81);
+    font-family: 'Inter';
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.options button:hover,
+.options button.active{
+    background: rgba(25, 237, 7, 0.53);
+    border: 1px solid rgba(0, 0, 0, 0.48);
+    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 40px;
+}

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>Evry</title>
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+<body>
+    <div id="app">
+        <header class="header">
+            <nav class="navigation_bar">
+                <div class="menu_mobile">
+                    <div class="menu_icon">
+                        <span>&#9776;</span>
+                    </div>
+                </div>
+                <div class="header_menu">
+                    <a href="#" class="active">Home</a>
+                    <a href="#">Services</a>
+                    <a href="#">Pricing</a>
+                    <a href="about_us.html">About us</a>
+                </div>
+                <div class="icons_menu">
+                    <a href="#"><img src="img/email.png" alt="email"></a>
+                    <a href="#"><img src="img/phone.png" alt="phone"></a>
+                    <a href="#"><img src="img/telegram.png" alt="navigation"></a>
+                </div>
+            </nav>
+        </header> 
+        <main>
+            <section class="hero">
+                <div class="hero_header">
+                    <h1>evry.<span>builders</span></h1>
+                    <h2>Accessible home renovations</h2>
+                    <button class="btn-primary" id="quote" @click="showForm">QUOTE</button>
+                </div>
+            </section>
+            
+            <div class="pop_up" v-if="awesome === true">
+                <div class="step_one" v-if="step === 1">
+                    <form class="form" id="form">
+                        <div class="form_info no_back">
+                            <h2>PREMISE</h2>
+                            <button id="close" @click="closeForm">
+                                <img src="/img/x.svg" alt="">           
+                            </button>
+                        </div>
+                        <div class="options">
+                            <button type="button" @click="setPremise('flat')"><img src="/img/flat.svg" alt="">Flat</button>
+                            <button type="button" @click="setPremise('house')"><img src="/img/house.svg" alt="">House</button>
+                            <button type="button" @click="setPremise('commercial')"><img src="/img/commercial.svg" alt="">Commercial</button>
+                        </div>
+                        <div class="form_button">
+                            <button @click="next">Next</button>
+                        </div>       
+                    </form>
+                </div>
+
+                <div class="step_two" v-if="step === 2">
+                    <form class="form_options" id="form">
+                        <div class="form_info">
+                            <button id="back" @click="back">
+                                <img src="/img/back.svg" alt="">
+                            </button>
+                            <h2>AREA</h2>
+                            <button id="close" @click="closeForm">
+                                <img src="/img/x.svg" alt="">           
+                            </button>
+                        </div>
+                        <div class="options">
+                            <button v-for="option in areaOptions" type="button" 
+                                :class="{active:area.includes(option.label)}" 
+                                @click="setArea(option.label)">
+                                <img :src="option.img" alt="">
+                                {{ option.label}}
+                            </button>
+                        </div>
+                        <div class="form_button">
+                            <button @click="next">Next</button>
+                        </div>       
+                    </form>
+                </div>
+
+                <div class="step_three" v-if="step === 3">
+                    <form class="form_options" id="form">
+                        <div class="form_info">
+                            <button id="back" @click="back">
+                                <img src="/img/back.svg" alt="">
+                            </button>
+                            <h2>SERVICE</h2>
+                            <button id="close" @click="closeForm">
+                                <img src="/img/x.svg" alt="">           
+                            </button>
+                        </div>
+                        <div class="options">
+                            <button type="button"><img src="/img/tiling.svg" alt="">Tiling</button>
+                            <button type="button"><img src="/img/flooring.svg" alt="">Flooring</button>
+                            <button type="button"><img src="/img/insulation.svg" alt="">Insulation</button>
+                            <button type="button"><img src="/img/painting.svg" alt="">Painting and Decoration</button>
+                            <button type="button"><img src="/img/house.svg" alt="">End of tenancy refurbishment</button>
+                        </div>
+                        <div class="form_button">
+                            <button @click="next" id="open">Next</button>
+                        </div>       
+                    </form>
+                </div> 
+
+                <div class="step_four" v-if="step === 4"> 
+                    <form  @submit.prevent="send()" class="form" id="form">
+                        <div class="form_info">
+                            <button id="back" @click="back">
+                                <img src="/img/back.svg" alt="">
+                            </button>
+                            <h2>CONTACT</h2>
+                            <button id="close" @click="closeForm">
+                                <img src="/img/x.svg" alt="">           
+                            </button>
+                        </div>
+                        <input v-model="firstName" required type="text" name="firstName" placeholder="Name" >
+                        <input v-model="phoneNumber" required type="tel" name="phone" pattern="\+[0-9]{5,}" placeholder="Phone">
+                        <input v-model="email" required type="email" name="email" placeholder="Email">
+                        <input v-model="adress" required type="adress" name="adress" placeholder="Adress">                  
+                        <div class="form_button">
+                            <button @click="next" id="open">Send</button>
+                        </div>       
+                    </form>
+                </div>
+
+                <div class="step_five" v-if="step === 5">
+                    <form class="form" id="form">
+                        <div class="form_info no_back">
+                            <h2>THANK YOU</h2>
+                            <button id="close" @click="closeForm">
+                                <img src="/img/x.svg" alt="">           
+                            </button>
+                        </div>
+                        <div class="options">
+                            <span><img src="/img/finish.svg" alt="">We will be right back.</span>
+                        </div>
+                        <div class="form_button">
+                            <button id="open">Finish</button>
+                        </div>                    
+                    </form>
+                </div>
+                
+            </div>
+        </main>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>
