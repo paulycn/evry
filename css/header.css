@@ -22,7 +22,7 @@
 }
 
 .hero {
-    background-image:  url(/img/boy.png), url(/img/bcg-red.png);
+    background-image:  url(img/boy.png), url(img/bcg-red.png);
     background-position: right 79px top 30px, right 0px top 0px;
     background-size: 40%, 69%;
     background-repeat: no-repeat;
