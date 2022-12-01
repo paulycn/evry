@@ -28,22 +28,22 @@
     box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 40px;
     padding-left: 37px;
-    background-image: url(/img/name.svg);
+    background-image: url(img/name.svg);
     background-repeat:no-repeat;
     background-size: 7%;
     background-position: left 9px top 12px;;
 }
 
 .form input:nth-child(3) {
-    background-image: url(/img/phone.svg);
+    background-image: url(img/phone.svg);
 }
 
 .form input:nth-child(4) {
-    background-image: url(/img/email.svg);
+    background-image: url(img/email.svg);
 }
 
 .form input:nth-child(5) {
-    background-image: url(/img/address.svg);
+    background-image: url(img/address.svg);
 }
 
 .form_info {
@@ -125,9 +125,21 @@
 }
 
 .options button:hover,
-.options button.active{
+.options button.active {
     background: rgba(25, 237, 7, 0.53);
     border: 1px solid rgba(0, 0, 0, 0.48);
     box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 40px;
+}
+
+@media (max-width:414px) {
+    .form,
+    .form_options {
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    border-radius: 0;
+    }
 }
