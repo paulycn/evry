@@ -24,6 +24,11 @@ button.btn-primary {
     border-radius: 10px;
     font-size: 30px;
     font-weight: 500;
+    color:black;
+}
+
+a {
+    text-decoration:none;
 }
 
 /* button:hover {
