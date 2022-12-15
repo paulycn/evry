@@ -10,25 +10,32 @@
 </head>
 <body>
     <div id="app">
-        <header class="header">
-            <nav class="navigation_bar">
-                <div class="menu_mobile">
-                    <div class="menu_icon">
-                        <span>&#9776;</span>
-                    </div>
-                </div>
-                <div class="header_menu">
-                    <a href="#" class="active">Home</a>
-                    <a href="#">Services</a>
-                    <a href="#">Pricing</a>
-                    <a href="about_us.html">About us</a>
-                </div>
-                <div class="icons_menu">
-                    <a href="#"><img src="img/email.png" alt="email"></a>
-                    <a href="#"><img src="img/phone.png" alt="phone"></a>
-                    <a href="#"><img src="img/telegram.png" alt="navigation"></a>
-                </div>
+        <header
+            class="header"
+            :class="{ 'mobile_menu_open': showMobileMenu }"
+        >
+            <nav class="navigation">
+                <button 
+                    @click="showMobileMenu = !showMobileMenu"
+                    class="burger_button"
+                >
+                    &#9776;
+                </button>
+                    <ul
+                        class="navigation_links" 
+                        :class="{ 'open': showMobileMenu }"
+                    >
+                        <li><a href="index.html" class="active">Home</a></li>
+                        <li><a href="#">Services</a></li>
+                        <li><a href="#">Pricing</a></li>
+                        <li><a href="about_us.html">About us</a></li>  
+                    </ul>
             </nav>
+            <div class="social_buttons">
+                <a href="#"><img src="img/email.png" alt="email"></a>
+                <a href="#"><img src="img/phone.png" alt="phone"></a>
+                <a href="#"><img src="img/telegram.png" alt="navigation"></a>
+            </div>
         </header> 
         <main>
             <section class="hero">
@@ -146,7 +153,6 @@
                         </div>                    
                     </form>
                 </div>
-                
             </div>
         </main>
     </div>

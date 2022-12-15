@@ -12,6 +12,7 @@ const app = Vue.createApp({
             premise: "",
             area: [],
             service:[],
+            showMobileMenu: false,
 
             areaOptions:[
                 {label: "1 Room", img: "img/one_room.svg"},
