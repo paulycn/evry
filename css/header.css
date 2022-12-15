@@ -140,7 +140,8 @@
     .burger_button {
         border: 0;
         background-color: #f3d548;
-        font-size: 35px;
+        font-size: 30px;
+        color:black;
     }
 }
 
