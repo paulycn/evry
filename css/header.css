@@ -23,7 +23,8 @@
     padding: 5px 9px;
 }
 
-.navigation_links a.active {
+.navigation_links a.active,
+.navigation_links a:hover {
     font-weight: 700;
 }
 
@@ -34,40 +35,31 @@
 
 .social_buttons img {
     width: 30px;
+    
 }
 
-.hero {
-    background-image:  url(../img/boy.png), url(../img/bcg-red.png);
-    background-position: right 79px top 30px, right 0px top 0px;
-    background-size: 40%, 69%;
-    background-repeat: no-repeat;
-    height: 700px;
-    position: relative;
+.social_element {
+    display: flex;
+    flex-direction: column;
+
 }
 
-.hero_header {
-    padding: 124px 10px 0 250px;
+.social_buttons .message {
+    display: none;
+    position: absolute;
+    top: 59px;
 }
 
-.hero_header h1 {
-    font-size: 85px;
-}
-
-.hero_header h2 {
-    font-size: 30px;
-    font-weight: 400;
-    margin: 50px auto 40px;
-}
-
-.hero_header span {
-    font-weight:100;
+.social_element:hover .message { 
+    display: block;
+    transition: all 2s ease;  
 }
 
 .menu_mobile {
     display: none;
 }
 
-@media (max-width: 414px) {
+@media (max-width: 434px) {
     .header {        
         z-index: 1;
         position: fixed;
@@ -107,30 +99,9 @@
         gap: 10px;
         padding: 6px;
     }
-    
-    .burger_button {
-        display: block;
-    }
 
     .social_buttons {
         flex-direction: column;
-    }
-
-    .hero { 
-        background-position: right 1px bottom 87px, right 0px top 0px;
-        background-size: 67%, 108%
-    }
-
-    .hero_header {
-        padding: 140px 10px 0 50px;
-    }
-
-    .hero h1 {
-        font-size: 39px;
-    }
-
-    .hero h2 {
-        display: none;
     }
 
     button.btn-primary {
@@ -138,6 +109,7 @@
     }
 
     .burger_button {
+        display: block;
         border: 0;
         background-color: #f3d548;
         font-size: 30px;
@@ -145,3 +117,6 @@
     }
 }
 
+@media(max-width:434px) {
+
+}

@@ -1,0 +1,65 @@
+.hero {
+    background-image:  url(../img/boy.svg), url(../img/bcg_red.svg);
+    background-position: right 15% top 15%, right 0px top 0px;
+    background-size: 26%, 69%;
+    background-repeat: no-repeat;
+    height: 650px;
+    position: relative;
+    background-color: #eaebe5;
+}
+
+main {
+    background-color: #eaebe5;
+}
+
+.hero_header {
+    padding: 10% 0 0 17%;
+    
+}
+
+.hero_header h1 {
+    font-size: 85px;
+}
+
+.hero_header h2 {
+    font-size: 2.4vw;
+    font-weight: 400;
+    margin: 50px auto 40px;
+}
+
+.hero_header span {
+    font-weight:100;
+}
+
+.hero_header img {
+    width: 50%;
+}
+
+@media(max-width:434px) {
+    .hero { 
+        background-position: right 1px bottom 29px, right 0px top 0px;
+        background-size: 67%, 108%;
+        background-color: white;
+    }
+
+    .hero_header {
+        padding: 167px 29px 0 55px;
+        
+    }
+
+    .hero h1 {
+        font-size: 39px;
+    }
+
+    .hero h2 {
+        display: none;
+    }
+
+    .hero_header img {
+        width: 69%;
+    }
+}
+
+@media(max-width:434px) {
+
+}
