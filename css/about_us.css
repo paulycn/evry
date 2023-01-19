@@ -84,7 +84,7 @@
     display: none;
 }
 
-@media (max-width:414px) {
+@media (max-width:434px) {
     .about_us::after {
         display: none;
     }
@@ -136,4 +136,10 @@
         margin-right: 0;
     }
     
+}
+
+@media (max-width:914px) {
+    .about_us::after {
+        display: none;
+    }
 }

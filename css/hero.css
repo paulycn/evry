@@ -60,6 +60,10 @@ main {
     }
 }
 
-@media(max-width:434px) {
-
+@media(max-width:375px) {
+    .hero { 
+        background-position: right 1px bottom 76px, right 0px top 0px;
+        background-size: 67%, 110%;
+        background-color: white;
+    }
 }

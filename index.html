@@ -68,10 +68,7 @@
                             <button type="button" @click="setPremise('flat')"><img src="img/flat.svg" alt="">Flat</button>
                             <button type="button" @click="setPremise('house')"><img src="img/house.svg" alt="">House</button>
                             <button type="button" @click="setPremise('commercial')"><img src="img/commercial.svg" alt="">Commercial</button>
-                        </div>
-                        <div class="form_button">
-                            <button @click="next">Next</button>
-                        </div>       
+                        </div>     
                     </form>
                 </div>
 
@@ -95,8 +92,8 @@
                             </button>
                         </div>
                         <div class="form_button">
-                            <button @click="next">Next</button>
-                        </div>       
+                            <button @click="next" :disabled="area.length === 0" >Next</button>
+                        </div>      
                     </form>
                 </div>
 
@@ -120,13 +117,13 @@
                             </button>
                         </div>
                         <div class="form_button">
-                            <button @click="next">Next</button>
+                            <button @click="next" :disabled="service.length === 0" >Next</button>
                         </div>       
                     </form>
                 </div> 
 
                 <div class="step_four" v-if="step === 4"> 
-                    <form  @submit.prevent="send()" class="form" id="form">
+                    <form @submit.prevent="send()" class="form" id="form">
                         <div class="form_info">
                             <button id="back" @click="back">
                                 <img src="img/back.svg" alt="">
@@ -136,12 +133,12 @@
                                 <img src="img/x.svg" alt="">           
                             </button>
                         </div>
-                        <input v-model="firstName" required type="text" name="firstName" placeholder="Name" >
-                        <input v-model="phoneNumber" required type="tel" name="phone" pattern="\+[0-9]{5,}" placeholder="Phone">
-                        <input v-model="email" required type="email" name="email" placeholder="Email">
-                        <input v-model="adress" required type="adress" name="adress" placeholder="Adress">                  
+                        <input v-model="firstName" required type="text" name="firstName" placeholder="Name" required>
+                        <input v-model="phoneNumber" required type="tel" name="phone" pattern="\+[0-9]{5,}" placeholder="Phone" required>
+                        <input v-model="email" required type="email" name="email" placeholder="Email" required>
+                        <input v-model="adress" required type="adress" name="adress" placeholder="Adress" required>                  
                         <div class="form_button">
-                            <button @click="next" id="open">Send</button>
+                            <button @click="next">Send</button>
                         </div>       
                     </form>
                 </div>
@@ -158,7 +155,7 @@
                             <span><img src="img/finish.svg" alt="">We will be right back.</span>
                         </div>
                         <div class="form_button">
-                            <button id="open">Finish</button>
+                            <button>Finish</button>
                         </div>                    
                     </form>
                 </div>

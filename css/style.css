@@ -20,12 +20,17 @@ h1, h2, h3, h4, h5, h6, p {
 
 button.btn-primary {
     padding: 10px 30px;
-    background: rgb(97 171 29);
+    background:#7fe126;
     border: 0; 
     border-radius: 10px;
     font-size: 2.2vw;
     font-weight: 500;
     color:black;
+}
+
+button.btn-primary:hover {
+    background: (97 171 29);
+    box-shadow: inset 2px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 a {
@@ -38,6 +43,9 @@ a {
         margin-top: 140%;
     }
 }
-/* button:hover {
-    box-shadow: 1px 4px 4px 0px rgba(131, 0, 0, 0.25);
-} */
+
+@media(max-width:375px) {
+    button.btn-primary {
+        margin-top: 120%;
+    }
+}

@@ -35,11 +35,11 @@
 }
 
 .form input:nth-child(3) {
-    background-image: url(../img/phone.svg);
+    background-image: url(../img/phone_contact.svg);
 }
 
 .form input:nth-child(4) {
-    background-image: url(../img/email.svg);
+    background-image: url(../img/email_contact.svg);
 }
 
 .form input:nth-child(5) {
@@ -64,6 +64,7 @@
     letter-spacing: 0.01em;
     font-size: 35px;
     color: #BAA338;
+    text-shadow: -0.1px 0 black, 0 0.1px grey, 0.1px 0 grey, 0 -0.1px grey;
 }
 
 .form_info button img {
@@ -103,6 +104,10 @@
     background:#f3d548;
     border: 0;
     font-size: 25px;
+}
+
+.form_button button:hover {
+    font-weight: 400;
 }
 
 .options span,
