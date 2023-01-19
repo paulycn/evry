@@ -1,4 +1,4 @@
-const apiKey = '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'
+const apiKey = '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'
 
 const app = Vue.createApp({
     data() {
@@ -34,9 +34,12 @@ const app = Vue.createApp({
     computed: {
         attributes () {
             return {
-                Name: this.lastName, 
+                FIRSTNAME: this.firstName, 
                 SMS: this.phoneNumber,
-                Adress: this.adress
+                ADDRESS: this.address,
+                SERVICE: this.service,
+                AREA: this.area,
+                PREMISE: this.premise
                 
             }
         }
@@ -63,7 +66,7 @@ const app = Vue.createApp({
                 .then(response => response.json())
                 .then(response => {
                     console.log(response)
-                    this.closeForm()
+                    this.next()
                 })
                 .catch(err => console.error(err))
         },
