@@ -68,6 +68,9 @@
                             <button type="button" @click="setPremise('flat')"><img src="img/flat.svg" alt="">Flat</button>
                             <button type="button" @click="setPremise('house')"><img src="img/house.svg" alt="">House</button>
                             <button type="button" @click="setPremise('commercial')"><img src="img/commercial.svg" alt="">Commercial</button>
+                        </div>
+                        <div class="form_button">
+                            <button @click="next">Send</button>
                         </div>     
                     </form>
                 </div>
@@ -92,7 +95,7 @@
                             </button>
                         </div>
                         <div class="form_button">
-                            <button @click="next" :disabled="area.length === 0" >Next</button>
+                            <button @click="next" :disabled="area.length === 0">Next</button>
                         </div>      
                     </form>
                 </div>
@@ -117,7 +120,7 @@
                             </button>
                         </div>
                         <div class="form_button">
-                            <button @click="next" :disabled="service.length === 0" >Next</button>
+                            <button @click="next" :disabled="service.length === 0">Next</button>
                         </div>       
                     </form>
                 </div> 
