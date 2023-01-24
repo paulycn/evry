@@ -47,7 +47,9 @@
 .social_buttons .message {
     display: none;
     position: absolute;
-    top: 59px;
+    top: 55px;
+    font-weight: 400;
+    /* box-shadow: inset 0px 4px 4px rgba(221, 68, 68, 0.25); */
 }
 
 .social_element:hover .message { 
@@ -115,8 +117,4 @@
         font-size: 30px;
         color:black;
     }
-}
-
-@media(max-width:434px) {
-
 }
