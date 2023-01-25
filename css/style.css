@@ -12,6 +12,7 @@ html, body, footer {
     font-family: 'Noto Sans JP', sans-serif;
     font-weight: 500;
     margin: 0;
+    background-color: #eaebe5;
 }
 
 h1, h2, h3, h4, h5, h6, p {
@@ -39,13 +40,22 @@ a {
 
 @media(max-width:434px) {
     button.btn-primary {
-        font-size: 6.2vw;
-        margin-top: 140%;
+        margin: 105% 0 0 38%;
+        font-size: 5.2vw;
+    }
+}
+
+@media(max-width:420px) {
+    button.btn-primary {
+        margin: 120% 0 0 38%;
+        font-size: 5.2vw;
     }
 }
 
 @media(max-width:375px) {
     button.btn-primary {
-        margin-top: 120%;
+        margin: 95% 0 0 35%;
+        font-size: 6.2vw;
     }
 }
+

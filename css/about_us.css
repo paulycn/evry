@@ -9,7 +9,7 @@
     content: '';
     position: absolute;
     width: 40%;
-    height: 531px;
+    height: 545px;
     top: 0;
     right: 0;
     background: #f3d548;
@@ -25,8 +25,8 @@
     min-height: calc(100vh - 80px);
     margin: 0 auto;
     background-image:url(../img/patterns.svg), url(../img/bcg-yellow.svg);
-    background-position:right 0 top 262px, right 0px top 0px;
-    background-size: 27% ,60%;
+    background-position:right 0 top 275px, right 0px top 0px;
+    background-size: 27% ,62%;
     background-repeat: no-repeat;
 }
 
@@ -44,6 +44,7 @@
 
 .about_us_image img {
     max-width: 100%;
+    padding-top: 102px;
 }
 
 .about_us_image h2 {

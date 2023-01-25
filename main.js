@@ -1,4 +1,4 @@
-const apiKey = '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'
+const apiKey = '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'
 
 const app = Vue.createApp({
     data() {
@@ -101,7 +101,10 @@ const app = Vue.createApp({
                 this.service.push(data)
             }
             console.log(this.service)
-        }
+        },
+        onlyNumbers: function() {
+            this.phoneNumber = this.phoneNumber.replace(/[^0-9.]/g,'');
+         }
     }
 })
 
