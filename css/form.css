@@ -171,7 +171,9 @@
     }
 
     .form_email input,
-    .form_email textarea {
+    .form_email textarea,
+    .form input,
+    .form textarea {
         width: 100%;
     }
 
@@ -186,8 +188,4 @@
         padding-left: 50px;
     }
 
-    .form_email input,
-    .form_email textarea {
-        width: 100%;
-    }
 }
