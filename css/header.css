@@ -70,6 +70,7 @@
         padding: 20px 0;
         width: 50px;
         transition: width 0.2s ease;
+        top: 0;
     }
 
     .header.mobile_menu_open {
