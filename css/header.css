@@ -75,7 +75,6 @@
     .header.mobile_menu_open {
         width: 100px;
         text-align: center;
-        /* margin-left: 100px; */
     }
 
     .navigation {
@@ -107,6 +106,7 @@
         background-color: #f3d548;
         font-size: 30px;
         color:black;
+        padding: 0;
     }
 
     .social_buttons {
