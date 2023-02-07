@@ -78,7 +78,7 @@
 
 @media only screen and (max-width:485px) {
     .hero {
-        background-position: bottom 0 right 0;
+        background-position: bottom 0 right -20px;
         background-size: 80%;
     }
 
@@ -89,12 +89,11 @@
 
     .hero_elements p {
         font-size: 15px;
-        margin: 10px auto 100px
+        margin: 10px auto 150px;
     }
 
     .button_class {
-        margin-bottom: 50%;
-        margin-right: 55%;    
+        margin: 10px auto 65px 5px;
     } 
 
     .hero_elements img {
@@ -110,10 +109,10 @@
         font-size: 33px;
     }
     .hero {
-        background-position: bottom 0 right 0px;
+        background-position: bottom 0 right -20px;
     }
     .hero_elements p {
-        margin: 20px auto 80px;
+        margin: 20px auto 150px;
         font-size: 24px;
     }
 }
@@ -154,7 +153,7 @@
                 }
             
                 .hero_elements p {
-                    margin-bottom: 150px;
+                    margin-bottom: 100px;
                 }
 
                 .hero_elements img {
