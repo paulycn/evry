@@ -63,8 +63,8 @@
 .form_email input,
 .form_email textarea {
     width: 550px;
-    background-size: 4%;
-    background-position: left 10px top 12px;
+    background-size: 25px;
+    background-position: left 7px top 9px;
     border-radius: 10px;
 }
 
@@ -185,13 +185,9 @@
         gap: 30px;
         padding-left: 50px;
     }
-}
 
-@media (max-width:468) {
     .form_email input,
     .form_email textarea {
         width: 100%;
-        background-size: 8%;
-        background-position: left 10px top 15px;
     }
 }

@@ -104,7 +104,7 @@
     .burger_button {
         display: block;
         border: 0;
-        /* background-color: #f3d548; */
+        background-color: #f3d548;
         font-size: 30px;
         color:black;
         padding: 0;
