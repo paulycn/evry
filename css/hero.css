@@ -78,8 +78,8 @@
 
 @media only screen and (max-width:485px) {
     .hero {
-        background-position: bottom 0 right 20px;
-        background-size: 60%;
+        background-position: bottom 0 right 0;
+        background-size: 80%;
     }
 
     .hero_elements h1 {
@@ -88,13 +88,13 @@
     }
 
     .hero_elements p {
-        font-size: 19px;
+        font-size: 15px;
         margin: 10px auto 100px
     }
 
     .button_class {
         margin-bottom: 25%;
-        margin-right: 43%;
+        margin-right: 55%;    
     } 
 
     .hero_elements img {

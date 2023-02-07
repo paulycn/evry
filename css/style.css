@@ -50,8 +50,8 @@ button.btn-primary:hover {
 
 @media only screen and (max-width:484px) {
     button.btn-primary {
-        font-size: 20px ;
-        padding: 10px 40px;
+        font-size: 14px;
+        padding: 7px 25px;
     }
 }
 
