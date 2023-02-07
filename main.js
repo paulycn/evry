@@ -8,11 +8,13 @@ const app = Vue.createApp({
             email: "",
             phoneNumber: "",
             awesome: false,
+            contactUs:false,
             step: 1,
             premise: "",
             area: [],
             service:[],
             showMobileMenu: false,
+            message: "",
 
             areaOptions:[
                 {label: "1 Room", img: "img/one_room.svg"},
@@ -39,7 +41,8 @@ const app = Vue.createApp({
                 ADDRESS: this.address,
                 SERVICE: this.service,
                 AREA: this.area,
-                PREMISE: this.premise   
+                PREMISE: this.premise,
+                MESSAGE: this.message  
             }
         }
     },
@@ -73,14 +76,21 @@ const app = Vue.createApp({
             this.awesome = true
             this.step = 1
         },
+        showMessageForm(){
+            this.contactUs = true
+        },
         closeForm(){
-            this.awesome = false
+            this.awesome = false,
+            this.contactUs = false
         },
         back(){
            this.step -= 1
         },
         next(){
             this.step += 1
+        },
+        setMessage(data){
+            this.message = data
         },
         setPremise(data){
             this.premise = data

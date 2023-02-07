@@ -12,54 +12,67 @@
     <div id="app">
         <header
             class="header"
-            :class="{ 'mobile_menu_open': showMobileMenu }"
-        >
+            :class="{ 'mobile_menu_open': showMobileMenu }">
             <nav class="navigation">
                 <button 
                     @click="showMobileMenu = !showMobileMenu"
-                    class="burger_button"
-                >
+                    class="burger_button">
                     &#9776;
                 </button>
                     <ul
                         class="navigation_links" 
-                        :class="{ 'open': showMobileMenu }"
-                    >
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="#">Services</a></li>
-                        <li><a href="about_us.html" class="active">About us</a></li>  
+                        :class="{ 'open': showMobileMenu }">
+                        <li><a href="index.html">Home</a></li>  
                     </ul>
             </nav>
             <div class="social_buttons">
                 <div class="social_element">
-                    <a title=" Fell free to email us!" href="#"><img src="img/email.svg" alt="email"></a>
-                    <div class="message"> Fell free to email us!</div>
+                    <a @click="showMessageForm"
+                    title=" Fell free to email us!" href="#"><img src="img/email.svg" alt="email"></a>
+                    <div class="message"> Send us an email</div>
                 </div>
                 <div class="social_element">
                     <a href="#"><img src="img/phone.svg" alt="phone"></a>
-                    <span class="message"> Contact us on number </span>
+                    <span class="message"> Call us: 07470 30 30 11 </span>
                 </div>
                 <div class="social_element">
                     <a href="#"><img src="img/navigation.svg" alt="navigation"></a>
-                    <div class="message"> We are in London </div>
+                    <div class="message"> We cover London </div>
                 </div>
             </div>
         </header> 
-    <main>
+        <main>
         <section class="about_us">
-            <div class="wrapper">
-                <div class="about_us_image">
-                    <h2>About Us</h2>
-                    <img src="img/about_us.svg"  alt="">
-                </div>
-                <div class="about_us_text">
-                    <h2 class="title_media">About Us</h2>
-                    <h2>Accessible home refurbishment</h2>
-                    <p>Are you worried about the spike of energy bills and wish of insulating your home to go through winter? Or, perhaps you are expecting a new born baby and think of redesigning your bedroom? Wether your sink is leaking or your tenants are leaving, <span>evry</span>.builders are here to deal with <span>evry</span>.thing. Evry is providing affordable renovation services at your fingertips to make your home comfortable again.</p>
-                </div>
+            <div class="container">
+                <h1>About Us</h1>
+                <p>
+                    Evry is your one-stop shop for all your home renovation needs. Our team of experienced professionals specializes in home refurbishments, including tiling, flooring, painting, decoration, and end of tenancy refurbishments. We also have extensive experience in home insulation services, ensuring that your home is not only beautiful but also energy-efficient.<br>
+                    Our professionals have over 70 years of combined experience in the construction industry worldwide, using the latest techniques and materials to make sure that your home is built to last. We pride ourselves on providing high-quality services at competitive prices, tailored to meet your specific needs.<br>
+                    We understand that every home and every homeowner is unique, that's why we offer a free, no-obligation quote to help you create a personalized plan for your renovation project. 
+                    <a @click="showMessageForm" href="#"> Contact Us</a> today to schedule your consultation and let us help you turn it into your dream home.
+                </p>
+                <img src="img/workers.svg" alt="">
             </div>
+            <div class="pop_up_email" v-if="contactUs === true"> 
+                <form @submit.prevent="send()" class="form form_email" >
+                    <div class="form_info no_back">
+                        <h2>CONTACT US</h2>
+                        <button id="close" @click="closeForm">
+                            <img src="img/x.svg" alt="">           
+                        </button>
+                    </div>
+                    <input v-model="firstName" required type="text" name="firstName" placeholder="Name" required>
+                    <input v-model="phoneNumber" required type="tel" title="Example: 441234123456" name="phone" @input="onlyNumbers" placeholder="Phone" required>
+                    <input v-model="email" required type="email" name="email" placeholder="Email" required>
+                    <textarea v-model="message" required type="text" name="message" placeholder="Enter here your message" ></textarea>              
+                    <div class="form_button">
+                        <button>Send</button>
+                    </div>       
+                </form>
+            </div>
+            
         </section>
-    </main>
+        </main>
     </div>
     <script src="main.js"></script>
 </body>

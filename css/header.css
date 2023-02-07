@@ -1,9 +1,9 @@
 .header {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     background: #f3d548;
-    height: 80px;
+    height: 60px;
 }
 
 .burger_button {
@@ -19,13 +19,14 @@
 
 .navigation_links a {
     text-decoration: none;
-    color: black;
-    padding: 5px 9px;
+    color: #25271C;
+    font-size: 30px;
+    padding-left: 60px;
 }
 
 .navigation_links a.active,
 .navigation_links a:hover {
-    font-weight: 700;
+    font-weight: 500;
 }
 
 .social_buttons {
@@ -34,22 +35,19 @@
 }
 
 .social_buttons img {
-    width: 30px;
-    
+    width: 30px;   
 }
 
-.social_element {
-    display: flex;
-    flex-direction: column;
-
+.social_element:last-child {
+    padding-right: 115px;
 }
 
 .social_buttons .message {
     display: none;
     position: absolute;
-    top: 55px;
-    font-weight: 400;
+    top: 58px;
     /* box-shadow: inset 0px 4px 4px rgba(221, 68, 68, 0.25); */
+    border-bottom: ridge;
 }
 
 .social_element:hover .message { 
@@ -61,7 +59,7 @@
     display: none;
 }
 
-@media (max-width: 434px) {
+@media only screen and (max-width: 484px) {
     .header {        
         z-index: 1;
         position: fixed;
@@ -75,7 +73,9 @@
     }
 
     .header.mobile_menu_open {
-        width: 104px;
+        width: 100px;
+        text-align: center;
+        /* margin-left: 100px; */
     }
 
     .navigation {
@@ -87,26 +87,19 @@
     .navigation_links {
         display: none;
         flex-direction: column;
-        margin-top: 145px;
-        text-align: center;
         width: 100px;
+    }
+
+    .navigation_links a {
+        font-size: 20px;
+        padding-left: 0;
+        font-weight: 600;
     }
 
     .navigation_links.open {
         display: flex;
-        flex-direction: column;
         margin-top: 30px;
-        text-align: left;
-        width: 100px;
-        gap: 10px;
-        padding: 6px;
     }
-
-    .social_buttons {
-        flex-direction: column;
-    }
-
-
 
     .burger_button {
         display: block;
@@ -114,6 +107,27 @@
         background-color: #f3d548;
         font-size: 30px;
         color:black;
+    }
+
+    .social_buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    
+    .social_element:last-child {
+        padding-right: 0;
+    }
+
+    .social_buttons img {
+        width: 30px;   
+    }
+
+    .social_buttons .message {
+        display: none;
+        position: unset;
+        bottom: auto;
+        border-bottom: ridge;
     }
 }
 

@@ -1,90 +1,168 @@
 .hero {
-    background-image:  url(../img/boy.svg), url(../img/bcg_red.svg);
-    background-position: right 15% top 15%, right 0px top 0px;
-    background-size: 26%, 69%;
+    background-image: url(/img/girl.svg);
     background-repeat: no-repeat;
-    height: 650px;
-    position: relative;
-    background-color: #eaebe5;
+    background-position: right 4% top 22%;
+    background-size: 55%;
 }
 
-main {
-    background-color: #eaebe5;
+.hero_elements {
+    display: flex;
+    flex-direction: column;
+    max-width: 750px;
+    align-items: center;
+    margin-left: 40px ;
+
 }
 
-.hero_header {
-    padding: 10% 0 0 17%;
-    
+.hero_elements img {
+    margin: 70px auto 30px;
+    width: 100%;
 }
 
-.hero_header h1 {
-    font-size: 85px;
+.hero_elements h1 {
+    font-size: 45px;
+    font-style: italic;
+    font-weight: 500;
 }
 
-.hero_header h2 {
-    font-size: 2.4vw;
-    font-weight: 400;
-    margin: 50px auto 40px;
+.hero_elements p {
+    font-size: 24px;
+    text-align: center;
+    margin: 40px auto 70px;
 }
 
-.hero_header span {
-    font-weight:100;
+.hero_elements span {
+    font-weight: 600;
 }
 
-.hero_header img {
-    width: 50%;
+.button_class {
+    margin-bottom: 80px;
 }
 
-@media(max-width:434px) {
+@media only screen and (max-width: 1300px) {
     .hero {
-        background-position: right 0px bottom 51px, right 0px top 0px;
-        background-size: 60%, 96%;
-        background-color: #eaebe5;
-    }
-
-    .hero_header {
-        padding: 0;
-    }
-
-    .hero h1 {
-        font-size: 39px;
-    }
-
-    .hero h2 {
-        display: none;
-    }
-
-    .hero_header img {
-        width: 79%;
-        padding: 29% 0 0 14%;
+        background-size: 50%;
     }
 }
 
-@media(max-width:375px) {
-    .hero { 
-        background-position: right 0px bottom 110px, right 0px top 0px;
-        background-size: 60%, 109%;
-        background-color: #eaebe5;
-    }
-
-    .hero_header img {
-        padding: 44% 0 0 14%;
+@media only screen and (max-width: 1250px) {
+    .hero {
+        background-size: 45%;
+        background-position: bottom 84px right 0px
     }
 }
 
-@media(max-width:300px) {
-    .hero { 
-        background-position: right 1px bottom 76px, right 0px top 0px;
-        background-size: 67%, 110%;
-        background-color: #eaebe5;
+@media only screen and (max-width: 1150px) {
+    .hero {
+        background-size: 35%;
+    }
+}
+
+@media only screen and (max-width: 1050px) {
+    .hero {
+        background-size: 25%;
+    }
+}
+
+@media only screen and (min-width: 484px) and (max-width: 930px) {
+    .hero {
+        background-image: none;
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    .hero_elements h1 {
+        font-size: 27px;
+    }
+}
+
+@media only screen and (max-width:485px) {
+    .hero {
+        background-position: bottom 0 right 20px;
+        background-size: 60%;
     }
 
-    /* .hero_header {
-        padding: 145px 10px 0 55px;
-    } */
-
-    .hero_header img {
-        width: 90%;
-        padding: 50%;
+    .hero_elements h1 {
+        font-size: 27px;
+        text-align: center;
     }
+
+    .hero_elements p {
+        font-size: 19px;
+        margin: 10px auto 100px
+    }
+
+    .button_class {
+        margin-bottom: 25%;
+        margin-right: 43%;
+    } 
+
+    .hero_elements img {
+        margin: 30px auto 10px;
+    }
+}
+
+@media only screen and (max-width:445px)
+                    and (min-height: 700px)
+                    and (max-height: 900px) {
+    .hero_elements h1 {
+        text-align: center;
+        font-size: 33px;
+    }
+    .hero {
+        background-position: bottom 0 right 0px;
+    }
+    .hero_elements p {
+        margin: 20px auto 80px;
+        font-size: 26px;
+    }
+}
+
+@media only screen and (max-width:410px) 
+                    and (min-height: 700px)
+                    and (max-height: 900px) {
+                .hero {
+                    background-position: bottom 0 right -25px;
+                    background-size: 95%;
+                }
+            
+                .hero_elements h1 {
+                    font-size: 30px;
+                }
+            
+                .hero_elements p {
+                    font-size: 20px;
+                    margin-bottom: 200px;
+                }
+            
+                .hero_elements img {
+                    margin: 40px auto 30px;
+                }
+
+                .button_class {
+                    margin-bottom: 25%;
+                    margin-right: 63%;
+                }
+}
+
+@media only screen and (max-width:350px) 
+                    and (min-height: 700px)
+                    and (max-height: 900px) {
+                .hero {
+                    background-position: bottom 0 right -25px;
+                    background-size: 95%;
+                }
+            
+                .hero_elements p {
+                    margin-bottom: 150px;
+                }
+
+                .hero_elements img {
+                    margin: 15px auto;
+                }
+
+                .button_class {
+                    margin-bottom: 25%;
+                    margin-right: 44%;
+                }
 }

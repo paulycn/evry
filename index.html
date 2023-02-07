@@ -12,48 +12,51 @@
     <div id="app">
         <header
             class="header"
-            :class="{ 'mobile_menu_open': showMobileMenu }"
-        >
+            :class="{ 'mobile_menu_open': showMobileMenu }">
             <nav class="navigation">
                 <button 
                     @click="showMobileMenu = !showMobileMenu"
-                    class="burger_button"
-                >
+                    class="burger_button">
                     &#9776;
                 </button>
                     <ul
                         class="navigation_links" 
-                        :class="{ 'open': showMobileMenu }"
-                    >
-                        <li><a href="index.html" class="active">Home</a></li>
-                        <li><a href="#">Services</a></li>
-                        <li><a href="about_us.html">About us</a></li>  
+                        :class="{ 'open': showMobileMenu }">
+                        <li><a href="about_us.html">About Us</a></li>  
                     </ul>
             </nav>
             <div class="social_buttons">
                 <div class="social_element">
-                    <a title=" Fell free to email us!" href="#"><img src="img/email.svg" alt="email"></a>
-                    <div class="message"> Fell free to email us!</div>
+                    <a @click="showMessageForm"
+                        href="#"><img src="img/email.svg" alt="email"></a>
+                    <div class="message"> Send us an email</div>
                 </div>
                 <div class="social_element">
                     <a href="#"><img src="img/phone.svg" alt="phone"></a>
-                    <span class="message"> Contact us on number </span>
+                    <div class="message"> Call us: 07470 30 30 11 </div>
                 </div>
                 <div class="social_element">
                     <a href="#"><img src="img/navigation.svg" alt="navigation"></a>
-                    <div class="message"> We are in London </div>
+                    <div class="message"> We cover London </div>
                 </div>
             </div>
         </header> 
         <main>
-            <section class="hero">
-                <div class="hero_header">
-                    <!-- <h1>evry.<span>builders</span></h1> -->
-                    <img src="img/logo.svg" alt="logo" >
-                    <h2>Accessible home renovations</h2>
-                    <button class="btn-primary" id="quote" @click="showForm">QUOTE</button>
-                </div>
-            </section>
+            <div class="container">
+                <section class="hero">
+                    <div class="hero_elements">
+                        <img src="img/logo.svg" alt="logo" >
+                        <h1>Affordable home renovations</h1>
+                        <p>At <span>evry.</span>builders, we understand the importance of keeping your home comfortable and energy-efficient. That's why we offer a wide range of affordable renovation services to address any issues that may be affecting your home's comfort and functionality. Wether your sink is leaking or your tenants are leaving, <span>evry.</span>builders are here to deal with <span>evry.</span>thing</p>
+                        <div class="button_class">
+                            <button class="btn-primary" id="quote" @click="showForm">
+                                QUOTE
+                            </button>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
             <div class="pop_up" v-if="awesome === true">
                 <div class="step_one" v-if="step === 1">
                     <form class="form" id="form">
@@ -70,7 +73,6 @@
                         </div>   
                     </form>
                 </div>
-
                 <div class="step_two" v-if="step === 2">
                     <form class="form_options" id="form">
                         <div class="form_info">
@@ -158,6 +160,25 @@
                         </div>                    
                     </form>
                 </div>
+
+
+            </div>
+            <div class="pop_up_email" v-if="contactUs === true"> 
+                <form @submit.prevent="send()" class="form form_email" >
+                    <div class="form_info no_back">
+                        <h2>CONTACT US</h2>
+                        <button id="close" @click="closeForm">
+                            <img src="img/x.svg" alt="">           
+                        </button>
+                    </div>
+                    <input v-model="firstName" required type="text" name="firstName" placeholder="Name" required>
+                    <input v-model="phoneNumber" required type="tel" title="Example: 441234123456" name="phone" @input="onlyNumbers" placeholder="Phone" required>
+                    <input v-model="email" required type="email" name="email" placeholder="Email" required>
+                    <textarea v-model="message" required type="text" name="message" placeholder="Enter here your message" ></textarea>              
+                    <div class="form_button">
+                        <button>Send</button>
+                    </div>       
+                </form>
             </div>
         </main>
     </div>

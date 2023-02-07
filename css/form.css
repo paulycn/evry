@@ -16,7 +16,8 @@
     border-radius: 50px;
 }
 
-.form input {
+.form input,
+.form textarea {
     height: 50px;
     width: 300px;
     font-size: 14px;
@@ -28,10 +29,13 @@
     box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 40px;
     padding-left: 37px;
-    background-image: url(../img/name.svg);
     background-repeat:no-repeat;
     background-size: 7%;
-    background-position: left 9px top 12px;;
+    background-position: left 9px top 12px;
+}
+
+.form input:nth-child(2){
+    background-image: url(../img/name.svg);
 }
 
 .form input:nth-child(3) {
@@ -44,6 +48,28 @@
 
 .form input:nth-child(5) {
     background-image: url(../img/address.svg);
+}
+
+.form textarea {
+    padding: 15px;
+    height: 150px;
+}
+
+.form_email {
+    border-radius: 30px;
+    top: 15%;
+}
+
+.form_email input,
+.form_email textarea {
+    width: 550px;
+    background-size: 4%;
+    background-position: left 10px top 12px;
+    border-radius: 10px;
+}
+
+.form_email h2 {
+    margin-top: 15px;
 }
 
 .form_info {
@@ -62,7 +88,7 @@
     font-family: 'Inter';
     font-weight: 800;
     letter-spacing: 0.01em;
-    font-size: 35px;
+    font-size: 34px;
     color: #BAA338;
     text-shadow: -0.1px 0 black, 0 0.1px grey, 0.1px 0 grey, 0 -0.1px grey;
 }
@@ -84,11 +110,6 @@
 
 .form_info button:hover {
     box-shadow: none;
-}
-
-.form textarea {
-    padding: 15px;
-    height: 150px;
 }
 
 .form button {
@@ -129,6 +150,8 @@
     margin-bottom: 10px;
 }
 
+
+
 .options button:hover,
 .options button.active {
     background: rgba(25, 237, 7, 0.53);
@@ -137,14 +160,40 @@
     border-radius: 40px;
 }
 
-@media (max-width:414px) {
+@media (max-width:768px) {
     .form,
-    .form_options {
-    top: 0;
-    right: 0;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    border-radius: 0;
+    .form_options,
+    .form_email {
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        border-radius: 0;
+    }
+
+    .form_email input,
+    .form_email textarea {
+        width: 100%;
+    }
+
+    .form_info {
+        display: flex;
+        justify-content: space-between;
+        gap: 40px;
+    }
+
+    .form_info.no_back {
+        gap: 30px;
+        padding-left: 50px;
+    }
+}
+
+@media (max-width:468) {
+    .form_email input,
+    .form_email textarea {
+        width: 100%;
+        background-size: 8%;
+        background-position: left 10px top 15px;
     }
 }
