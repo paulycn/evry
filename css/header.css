@@ -24,10 +24,13 @@
     padding-left: 60px;
 }
 
-.navigation_links a.active,
-.navigation_links a:hover {
+.navigation_links a.active {
     font-weight: 500;
 }
+
+/* .navigation_links a:hover {
+    color: #dee4c2;
+} */
 
 .social_buttons {
     display: flex;
