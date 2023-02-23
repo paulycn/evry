@@ -25,6 +25,11 @@ a {
     text-decoration:none;
 }
 
+img {
+    block-size: auto;
+    object-fit: cover;
+}
+
 .container {
     max-width: 1440px;
     width: 100%;

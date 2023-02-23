@@ -28,9 +28,9 @@
     font-weight: 500;
 }
 
-/* .navigation_links a:hover {
-    color: #dee4c2;
-} */
+.navigation_links a:hover {
+    color: #424c11;
+}
 
 .social_buttons {
     display: flex;
