@@ -1,19 +1,44 @@
-.form,
-.form_options {
-    position: absolute;
-    top: 30%;
-    right: 30%;
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    flex-direction: column;
-    align-items: center;
+.popup {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
     width: 600px;
     background:#f3d548;
     padding: 20px 40px;
     border: 1px solid rgba(0, 0, 0, 0.49);
     backdrop-filter: blur(2px);
     border-radius: 50px;
+}
+
+.popup .control_button {
+    background:#f3d548;
+    border: 0;
+    justify-content: space-between;
+}
+
+.popup .control_button img {
+    width: 15px;
+}
+
+.popup .popup_close {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+}
+
+.popup .popup_back {
+    position: absolute;
+    top: 25px;
+    left: 25px;
+}
+
+.form {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-direction: column;
+    align-items: center;
 }
 
 .form input,
@@ -55,11 +80,6 @@
     height: 150px;
 }
 
-.form_email {
-    border-radius: 30px;
-    top: 15%;
-}
-
 .form_email input,
 .form_email textarea {
     width: 550px;
@@ -91,10 +111,6 @@
     font-size: 34px;
     color: #BAA338;
     text-shadow: -0.1px 0 black, 0 0.1px grey, 0.1px 0 grey, 0 -0.1px grey;
-}
-
-.form_info button img {
-    width: 15px;
 }
 
 .options img {
@@ -159,20 +175,18 @@
 }
 
 @media (max-width:768px) {
-    .form,
-    .form_options,
-    .form_email {
+    .popup {
         top: 0;
         right: 0;
-        left: 20px;
         bottom: 0;
+        left: 20px;
+        transform: none;
         width: 100%;
         height: 100%;
         border-radius: 0;
-    }
-
-    .pop_up {
-        width: 100%;
+        border: 0;
+        display: flex;
+        align-items: center;
     }
 
     .form_email input,
@@ -192,5 +206,4 @@
         gap: 30px;
         padding-left: 50px;
     }
-
 }

@@ -41,11 +41,15 @@
     width: 30px;   
 }
 
+.social_element {
+    position: relative;
+}
+
 .social_element:last-child {
     padding-right: 115px;
 }
 
-.social_buttons .message {
+.social_element .message {
     display: none;
     position: absolute;
     top: 58px;
@@ -128,10 +132,17 @@
     }
 
     .social_buttons .message {
-        display: none;
-        position: unset;
-        bottom: auto;
-        border-bottom: ridge;
+        left: 45px;
+        width: 200px;
+        background: whitesmoke;
+        border-radius: 5px;
+        padding: 10px;
+        top: 50%;
+        transform: translate(0, -50%);
+    }
+
+    .social_element {
+        position: relative;
     }
 }
 

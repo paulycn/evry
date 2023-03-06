@@ -32,7 +32,7 @@
                     <div class="message"> Send us an email</div>
                 </div>
                 <div class="social_element">
-                    <a href="#"><img src="/img/phone.svg" alt="phone"></a>
+                    <a href="tel:07470303011"><img src="/img/phone.svg" alt="phone"></a>
                     <div class="message"> Call us: 07470 30 30 11 </div>
                 </div>
                 <div class="social_element">
@@ -57,14 +57,18 @@
                 </section>
             </div>
 
-            <div class="pop_up" v-if="awesome === true">
-                <div class="step_one" v-if="step === 1">
+            <div class="popup" v-if="awesome === true">
+                <button class="control_button popup_back" @click="back" v-if="step !== 1 && step !== 5">
+                    <img src="img/back.svg" alt="Back">
+                </button>
+                <button class="control_button popup_close" @click="closeServicesPopup">
+                    <img src="img/x.svg" alt="Close">           
+                </button>
+
+                <template v-if="step === 1">
                     <form class="form" id="form">
-                        <div class="form_info no_back">
+                        <div class="form_info">
                             <h2>PREMISE</h2>
-                            <button id="close" @click="closeForm">
-                                <img src="img/x.svg" alt="">           
-                            </button>
                         </div>
                         <div class="options">
                             <button type="button" @click="setPremise('flat')"><img src="img/flat.svg" alt="">Flat</button>
@@ -72,22 +76,19 @@
                             <button type="button" @click="setPremise('commercial')"><img src="img/commercial.svg" alt="">Commercial</button>
                         </div>   
                     </form>
-                </div>
-                <div class="step_two" v-if="step === 2">
-                    <form class="form_options" id="form">
+                </template>
+                <template v-if="step === 2">
+                    <form class="form" id="form">
                         <div class="form_info">
-                            <button id="back" @click="back">
-                                <img src="img/back.svg" alt="">
-                            </button>
                             <h2>AREA</h2>
-                            <button id="close" @click="closeForm">
-                                <img src="img/x.svg" alt="">           
-                            </button>
                         </div>
                         <div class="options">
-                            <button v-for="option in areaOptions" type="button" 
+                            <button 
+                                v-for="option in areaOptions"
+                                type="button" 
                                 :class="{active:area.includes(option.label)}" 
-                                @click="setArea(option.label)">
+                                @click="setArea(option.label)"
+                            >
                                 <img :src="option.img" alt="">
                                 {{ option.label}}
                             </button>
@@ -96,18 +97,12 @@
                             <button @click="next" :disabled="area.length === 0">Next</button>
                         </div>      
                     </form>
-                </div>
+                </template>
 
-                <div class="step_three" v-if="step === 3">
-                    <form class="form_options" id="form">
+                <template v-if="step === 3">
+                    <form class="form" id="form">
                         <div class="form_info">
-                            <button id="back" @click="back">
-                                <img src="img/back.svg" alt="">
-                            </button>
                             <h2>SERVICE</h2>
-                            <button id="close" @click="closeForm">
-                                <img src="img/x.svg" alt="">           
-                            </button>
                         </div>
                         <div class="options">
                             <button v-for="option in serviceOptions" type="button"
@@ -121,36 +116,27 @@
                             <button @click="next" :disabled="service.length === 0">Next</button>
                         </div>       
                     </form>
-                </div> 
+                </template> 
 
-                <div class="step_four" v-if="step === 4"> 
+                <template v-if="step === 4"> 
                     <form @submit.prevent="send()" class="form" id="form">
                         <div class="form_info">
-                            <button id="back" @click="back">
-                                <img src="img/back.svg" alt="">
-                            </button>
                             <h2>CONTACT</h2>
-                            <button id="close" @click="closeForm">
-                                <img src="img/x.svg" alt="">           
-                            </button>
                         </div>
                         <input v-model="firstName" required type="text" name="firstName" placeholder="Name" required>
-                        <input v-model="phoneNumber" required type="tel" title="Example: 441234123456" name="phone" @input="onlyNumbers" placeholder="Phone" required>
+                        <input v-model="phoneNumber" required type="tel" title="Example: 441234123456" name="phone" placeholder="Phone" required>
                         <input v-model="email" required type="email" name="email" placeholder="Email" required>
                         <input v-model="address" required type="text" name="address" placeholder="Address" required>                  
                         <div class="form_button">
                             <button>Send</button>
                         </div>       
                     </form>
-                </div>
+                </template>
 
-                <div class="step_five" v-if="step === 5">
+                <template v-if="step === 5">
                     <form class="form" id="form">
-                        <div class="form_info no_back">
+                        <div class="form_info">
                             <h2>THANK YOU</h2>
-                            <button id="close" @click="closeForm">
-                                <img src="img/x.svg" alt="">           
-                            </button>
                         </div>
                         <div class="options">
                             <span><img src="img/finish.svg" alt="">We will be right back.</span>
@@ -159,17 +145,15 @@
                             <button>Finish</button>
                         </div>                    
                     </form>
-                </div>
-
-
+                </template>
             </div>
-            <div class="pop_up_email" v-if="contactUs === true"> 
+            <div class="popup" v-if="contactUs === true">
+                <button class="control_button popup_close" @click="closeEmailPopup">
+                    <img src="img/x.svg" alt="Close">           
+                </button>
                 <form @submit.prevent="send()" class="form form_email" >
-                    <div class="form_info no_back">
+                    <div class="form_info">
                         <h2>CONTACT US</h2>
-                        <button id="close" @click="closeForm">
-                            <img src="img/x.svg" alt="">           
-                        </button>
                     </div>
                     <input v-model="firstName" required type="text" name="firstName" placeholder="Name" required>
                     <input v-model="phoneNumber" required type="tel" title="Example: 441234123456" name="phone" @input="onlyNumbers" placeholder="Phone" required>

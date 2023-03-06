@@ -53,13 +53,13 @@
                 </p>
                 <img class="about_us_img" src="img/workers.svg" alt="">
             </div>
-            <div class="pop_up_email" v-if="contactUs === true"> 
+            <div class="popup" v-if="contactUs === true"> 
+                <button class="control_button popup_close" @click="closeEmailPopup">
+                    <img src="img/x.svg" alt="Close">           
+                </button>
                 <form @submit.prevent="send()" class="form form_email" >
                     <div class="form_info no_back">
                         <h2>CONTACT US</h2>
-                        <button id="close" @click="closeForm">
-                            <img src="img/x.svg" alt="">           
-                        </button>
                     </div>
                     <input v-model="firstName" required type="text" name="firstName" placeholder="Name" required>
                     <input v-model="phoneNumber" required type="tel" title="Example: 441234123456" name="phone" @input="onlyNumbers" placeholder="Phone" required>

@@ -1,4 +1,4 @@
-const apiKey = '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'
+const apiKey = atob('eGtleXNpYi05YzE4NTA3MjdhZmVkMWUzYmM0NjY1NmE3ZmNkNjJiYmFjOWY4YzA5YTg0ZGQ0MGNjNTUyNTJlYWJlZWYxMmUzLTdmSWtnSU5EMUVPTlUwQkk=')
 
 const app = Vue.createApp({
     data() {
@@ -11,6 +11,7 @@ const app = Vue.createApp({
             contactUs:false,
             step: 1,
             premise: "",
+            address: "",
             area: [],
             service:[],
             showMobileMenu: false,
@@ -79,8 +80,10 @@ const app = Vue.createApp({
         showMessageForm(){
             this.contactUs = true
         },
-        closeForm(){
-            this.awesome = false,
+        closeServicesPopup(){
+            this.awesome = false
+        },
+        closeEmailPopup(){
             this.contactUs = false
         },
         back(){
@@ -112,9 +115,10 @@ const app = Vue.createApp({
             }
             console.log(this.service)
         },
-        onlyNumbers: function() {
-            this.phoneNumber = this.phoneNumber.replace(/[^0-9.]/g,'');
-         }
+        // onlyNumbers: function() {
+        //     this.phoneNumber = this.phoneNumber.replace(/[^0-9.]/g,'');
+        //  }
+        // @input="onlyNumbers" 
     }
 })
 
