@@ -52,9 +52,9 @@
 .social_element .message {
     display: none;
     position: absolute;
-    top: 58px;
-    /* box-shadow: inset 0px 4px 4px rgba(221, 68, 68, 0.25); */
-    border-bottom: ridge;
+    top: 50px;
+    /* border-bottom: ridge; */
+    width: 180px;
 }
 
 .social_element:hover .message { 
