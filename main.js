@@ -70,6 +70,7 @@ const app = Vue.createApp({
                 .then(response => {
                     console.log(response)
                     this.next()
+                    this.closeEmailPopup()
                 })
                 .catch(err => console.error(err))
         },
