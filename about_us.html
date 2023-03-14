@@ -32,8 +32,8 @@
                     <div class="message"> Send us an email</div>
                 </div>
                 <div class="social_element">
-                    <a href="#"><img src="img/phone.svg" alt="phone"></a>
-                    <span class="message"> Call us: 07470 30 30 11 </span>
+                    <a href="tel:07470303011"><img src="/img/phone.svg" alt="phone"></a>
+                    <div class="message"> Call us: 07470 30 30 11 </div>
                 </div>
                 <div class="social_element">
                     <a href="#"><img src="img/navigation.svg" alt="navigation"></a>
@@ -49,7 +49,7 @@
                     Evry is your one-stop shop for all your home renovation needs. Our team of experienced professionals specializes in home refurbishments, including tiling, flooring, painting, decoration, and end of tenancy refurbishments. We also have extensive experience in home insulation services, ensuring that your home is not only beautiful but also energy-efficient.<br>
                     Our professionals have over 70 years of combined experience in the construction industry worldwide, using the latest techniques and materials to make sure that your home is built to last. We pride ourselves on providing high-quality services at competitive prices, tailored to meet your specific needs.<br>
                     We understand that every home and every homeowner is unique, that's why we offer a free, no-obligation quote to help you create a personalized plan for your renovation project. 
-                    <a @click="showMessageForm" href="#"> Contact Us</a> today to schedule your consultation and let us help you turn it into your dream home.
+                    <br><a @click="showMessageForm" href="#"> Contact Us</a> <br>today to schedule your consultation and let us help you turn it into your dream home.
                 </p>
                 <img class="about_us_img" src="img/workers.svg" alt="">
             </div>
@@ -58,7 +58,7 @@
                     <img src="img/x.svg" alt="Close">           
                 </button>
                 <form @submit.prevent="send()" class="form form_email" >
-                    <div class="form_info no_back">
+                    <div class="form_info">
                         <h2>CONTACT US</h2>
                     </div>
                     <input v-model="firstName" required type="text" name="firstName" placeholder="Name" required>

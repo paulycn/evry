@@ -13,7 +13,7 @@ html, body, footer, main {
     font-family: 'Inter', sans-serif;
     font-weight: 400;
     margin: 0;
-    background-color: #eaebe5;
+    background-color: #F1F1F1;
 }
 
 h1, h2, h3, h4, h5, h6, p {
@@ -46,6 +46,7 @@ button.btn-primary {
     font-weight: 500;
     color: #25271C;
     letter-spacing: 1px;
+    margin-bottom: 100px;
 }
 
 button.btn-primary:hover {

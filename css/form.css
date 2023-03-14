@@ -98,10 +98,10 @@
     gap: 130px;
 }
 
-.form_info.no_back {
+/* .form_info.no_back {
     gap: 100px;
     padding-left: 130px;
-}
+} */
 
 .form_info h2 {
     text-align: center;
