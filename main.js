@@ -6,7 +6,7 @@ const app = Vue.createApp({
             firstName: "",
             lastName: "",
             email: "",
-            phoneNumber: "",
+            phoneNumber: "+44 ",
             awesome: false,
             contactUs:false,
             step: 1,

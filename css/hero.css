@@ -1,7 +1,7 @@
 .hero {
     background-image: url(/img/girl.svg);
     background-repeat: no-repeat;
-    background-position: right 16% bottom;
+    background-position: right 5% bottom;
     background-size: 54%;
 }
 
@@ -99,6 +99,10 @@
 
     .hero_elements img {
         margin: 30px auto 10px;
+    }
+
+    .hero_elements {
+        display: block;
     }
 }
 
