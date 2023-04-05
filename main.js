@@ -16,6 +16,7 @@ const app = Vue.createApp({
             service:[],
             showMobileMenu: false,
             message: "",
+            details:"",
 
             areaOptions:[
                 {label: "1 Room", img: "img/one_room.svg"},
@@ -43,7 +44,8 @@ const app = Vue.createApp({
                 SERVICE: this.service,
                 AREA: this.area,
                 PREMISE: this.premise,
-                MESSAGE: this.message  
+                MESSAGE: this.message,
+                DETAILS: this.details,  
             }
         }
     },
@@ -98,6 +100,10 @@ const app = Vue.createApp({
         },
         setPremise(data){
             this.premise = data
+            this.next()
+        },
+        setDetails(){
+            this.details = data
             this.next()
         },
         setArea(data){

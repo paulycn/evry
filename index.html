@@ -135,7 +135,22 @@
                     </form>
                 </template>
 
-                <template v-if="step === 5">
+				<template v-if="step === 5">
+                    <form class="form" id="form">
+                        <div class="form_info">
+                            <h2>DETAILS</h2>
+                        </div>
+                        <div class="options">
+                            <textarea v-model="details" name="details"
+							placeholder="Write as many details as possible"></textarea>
+                        </div>
+                        <div class="form_button">
+                            <button @click="next">Send</button>
+                        </div>                   
+                    </form>
+                </template>
+
+				<template v-if="step === 6">
                     <form class="form" id="form">
                         <div class="form_info">
                             <h2>THANK YOU</h2>
@@ -148,6 +163,7 @@
                         </div>                    
                     </form>
                 </template>
+
             </div>
             <div class="popup" v-if="contactUs === true">
                 <button class="control_button popup_close" @click="closeEmailPopup">
@@ -160,7 +176,7 @@
                     <input v-model="firstName" required type="text" name="firstName" placeholder="Name" required>
                     <input v-model="phoneNumber" required type="tel" title="Example: +44 1234 123456" name="phone" placeholder="Phone" required>
                     <input v-model="email" required type="email" name="email" placeholder="Email" required>
-                    <textarea v-model="message" required type="text" name="message" placeholder="Enter here your message" ></textarea>              
+                    <textarea v-model="message" required type="text" name="message" placeholder="Enter here your message"></textarea>              
                     <div class="form_button">
                         <button type="submit">Send</button>
                     </div>       
@@ -168,6 +184,7 @@
             </div>
         </main>
     </div>
+
     <script src="main.js"></script>
     <!-- <script src="https://d3ey4dbjkt2f6s.cloudfront.net/assets/static_link/work_request_embed_dialog_snippet.js" clienthub_id="29dfd2e0-caee-4182-b6a3-0fc2e3bb0a48" form_url="https://clienthub.getjobber.com/client_hubs/29dfd2e0-caee-4182-b6a3-0fc2e3bb0a48/public/work_request/embedded_dialog_work_request_form"></script> -->
 </body>
