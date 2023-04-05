@@ -7,7 +7,7 @@ const app = Vue.createApp({
             lastName: "",
             email: "",
             phoneNumber: "+44 ",
-            awesome: false,
+            showPopup: false,
             contactUs:false,
             step: 1,
             premise: "",
@@ -77,14 +77,14 @@ const app = Vue.createApp({
                 .catch(err => console.error(err))
         },
         showForm(){
-            this.awesome = true
+            this.showPopup = true
             this.step = 1
         },
         showMessageForm(){
             this.contactUs = true
         },
         closeServicesPopup(){
-            this.awesome = false
+            this.showPopup = false
         },
         closeEmailPopup(){
             this.contactUs = false
