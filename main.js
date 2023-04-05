@@ -102,10 +102,6 @@ const app = Vue.createApp({
             this.premise = data
             this.next()
         },
-        setDetails(){
-            this.details = data
-            this.next()
-        },
         setArea(data){
             if(this.area.includes(data)){
                 this.area.splice(this.area.indexOf(data),1)

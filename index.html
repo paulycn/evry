@@ -48,10 +48,6 @@
                         <img src="img/logo.svg" alt="logo" >
                         <h1>Affordable home renovations</h1>
                         <p>At <span>evry.</span>builders, we understand the importance of keeping your home comfortable and energy-efficient. That's why we offer a wide range of affordable renovation services to address any issues that may be affecting your home's comfort and functionality. Wether your sink is leaking or your tenants are leaving, <span>evry.</span>builders are here to deal with <span>evry.</span>thing</p>
-                        <!-- <div class="button_class">
-                            <button name="button" type="button" id="work-request-button-29dfd2e0-caee-4182-b6a3-0fc2e3bb0a48" style="display: inline-flex;color:#f1f1f1;background-color:#f3d548;align-items:center;justify-content:center;min-height:36px;padding:8px 12px;font-family:'Noto Sans',Helvetica,Arial,sans-serif;font-size:14px;font-weight:700;line-height:1;-webkit-font-smoothing:antialiased;-webkit-appearance:none;text-align:center;text-decoration:none;border:1px solid transparent;border-radius:4px;outline:none;cursor:pointer;vertical-align:middle;">Book </button>
-                            <link rel="stylesheet" media="screen" href="https://d3ey4dbjkt2f6s.cloudfront.net/assets/external/work_request_embed.css"/>
-                        </div> -->
                         <button class="btn-primary" id="quote" @click="showForm">
                             QUOTE
                         </button>
@@ -121,7 +117,7 @@
                 </template> 
 
                 <template v-if="step === 4"> 
-                    <form @submit.prevent="send()" class="form" id="form">
+                    <form class="form" id="form">
                         <div class="form_info">
                             <h2>CONTACT</h2>
                         </div>
@@ -130,13 +126,13 @@
                         <input v-model="email" required type="email" name="email" placeholder="Email" required>
                         <input v-model="address" required type="text" name="address" placeholder="Address" required>                  
                         <div class="form_button">
-                            <button>Send</button>
+                            <button @click="next">Send</button>
                         </div>       
                     </form>
                 </template>
 
 				<template v-if="step === 5">
-                    <form class="form" id="form">
+                    <form @submit.prevent="send()" class="form"  id="form">
                         <div class="form_info">
                             <h2>DETAILS</h2>
                         </div>
@@ -145,7 +141,7 @@
 							placeholder="Write as many details as possible"></textarea>
                         </div>
                         <div class="form_button">
-                            <button @click="next">Send</button>
+                            <button>Send</button>
                         </div>                   
                     </form>
                 </template>
@@ -186,6 +182,5 @@
     </div>
 
     <script src="main.js"></script>
-    <!-- <script src="https://d3ey4dbjkt2f6s.cloudfront.net/assets/static_link/work_request_embed_dialog_snippet.js" clienthub_id="29dfd2e0-caee-4182-b6a3-0fc2e3bb0a48" form_url="https://clienthub.getjobber.com/client_hubs/29dfd2e0-caee-4182-b6a3-0fc2e3bb0a48/public/work_request/embedded_dialog_work_request_form"></script> -->
 </body>
 </html>
